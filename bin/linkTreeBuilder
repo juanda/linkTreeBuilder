@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+include __DIR__ . "/../vendor/autoload.php";
+
+$linkTreeBuilderCommand = new \Jazzyweb\LinkTreeBuilder\Command\LinkTreeBuilderCommand();
+
+$app = new \Symfony\Component\Console\Application();
+
+$app->add($linkTreeBuilderCommand);
+
+$logo = <<< LOGO
+  _      _       _      _______              ____        _ _     _
+ | |    (_)     | |    |__   __|            |  _ \      (_) |   | |
+ | |     _ _ __ | | __    | |_ __ ___  ___  | |_) |_   _ _| | __| | ___ _ __
+ | |    | | '_ \| |/ /    | | '__/ _ \/ _ \ |  _ <| | | | | |/ _` |/ _ \ '__|
+ | |____| | | | |   <     | | | |  __/  __/ | |_) | |_| | | | (_| |  __/ |
+ |______|_|_| |_|_|\_\    |_|_|  \___|\___| |____/ \__,_|_|_|\__,_|\___|_|
+
+                                                        by juandarodriguez.es
+LOGO;
+
+echo $logo.PHP_EOL;
+
+$app->run();

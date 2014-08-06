@@ -8,5 +8,6 @@
     },
     "autoload": {
         "psr-0": {"": "src/"}
-    }
+    },
+    "bin": ["bin/linkTreeBuilder"]
 }

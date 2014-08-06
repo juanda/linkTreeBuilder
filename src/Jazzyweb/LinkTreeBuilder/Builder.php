@@ -95,12 +95,12 @@ class Builder {
 
         $parsedUrl = parse_url($url);
 
-        $rootUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . ':' . (isset($parsedUrl['port'])? $parsedUrl['port'] : '');
+        $rootUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] .  (isset($parsedUrl['port'])? ':' . $parsedUrl['port'] : '');
 
         if(strpos($a, 'http') === 0){
             $urlCorrected = $a;
         }else {
-            $urlCorrected = $rootUrl . ((strpos($a, '/') === 0) ? '' : '/') . $a;
+            $urlCorrected = ((strpos($a, '/') === 0)) ? $rootUrl . $a : $url . '/' . $a;
         }
 
         return $urlCorrected;
